@@ -4,30 +4,47 @@ from __future__ import print_function
 
 import os
 import numpy as np
+
+# Visualizing data
 import matplotlib.pyplot as plt
 import matplotlib.cm as cm
+
+# ML
 import tensorflow as tf
+
+# Generate data
 from data_gmm import GMM_distribution, sample_GMM, plot_GMM
+
+# Analyzing data
 from data_utils import shuffle, iter_data
+
+# Progress bar
 from tqdm import tqdm
 
+
+# TF-Slim is a lightweight library for defining, training and evaluating models
+# in TensorFlow. It enables defining complex networks quickly and concisely
 slim = tf.contrib.slim
+# Classes that represent batches of statistical distributions. 
+# Each class is initialized with parameters that define the distributions
 ds = tf.contrib.distributions
+# Create a new graph which compute the targets from the replaced Tensors.
 graph_replace = tf.contrib.graph_editor.graph_replace
 
-
-""" parameters """
+# Hyperparams - parameters
 n_epoch = 1000
 batch_size  = 64
 dataset_size = 512
 input_dim = 2
 latent_dim = 2
 eps_dim = 2
-
+# discriminator
 n_layer_disc = 2
 n_hidden_disc = 256
+# generator (incoderish)
 n_layer_gen = 2
 n_hidden_gen= 256
+# inference network (generator #2) (decoderish)
 n_layer_inf = 2
 n_hidden_inf= 256
 
