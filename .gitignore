@@ -1,16 +1,8 @@
-**/.idea/
-**/*.iml
-**/*.iws
-**/*.eml
-**/out/
-**/.DS_Store
-**/.svn
-**/log/*.log
-**/tmp/**
-**/node_modules/
-**/.sass-cache
-**/css/reveal.min.css
-**/js/reveal.min.js
+# Slides
+slides/**/*
+!slides/index.html
+!slides/demo.mp4
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
